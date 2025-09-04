@@ -15,6 +15,14 @@ app.get("/hola", (req, res) => {
       { Nombre: "Hijo2", Edad: 7 },
       { Nombre: "Hijo3", Edad: 10 },
     ],
+    Hijas: [
+        { Nombre: "Hija1", Edad: 3 },
+        { Nombre: "Hija2", Edad: 8 },
+        { Nombre: "Hija3", Edad: 12 },
+        { Nombre: "Hija4", Edad: 15 },
+        { Nombre: "Hija5", Edad: 18 },
+        { Nombre: "Hija6", Edad: 20 }
+    ],
     parametro1: params.param1,
     parametro2: params.param2,
   });
