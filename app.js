@@ -1,6 +1,9 @@
 import express from "express";
+import morgan from "morgan";
 
 const app = express();
+
+app.use(morgan("dev"));
 
 // /hola?param1=par1&param2=par2
 app.get("/hola", (req, res) => {
@@ -36,11 +39,13 @@ app.post("/respuesta", (req, res) => {
   const params = req.query;
   const body = req.body;
   const headers = req.headers;
-  res.json({
+  const request = {
     headers,
     params,
     body,
-  });
+  };
+  console.log(request);
+  res.json(request);
 });
 
 app.use((req, res) => {
