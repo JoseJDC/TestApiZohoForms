@@ -32,7 +32,7 @@ app.get("/hola", (req, res) => {
   });
 });
 
-app.get("/respuesta", (req, res) => {
+app.post("/respuesta", (req, res) => {
   const params = req.query;
   const body = req.body;
   const headers = req.headers;
