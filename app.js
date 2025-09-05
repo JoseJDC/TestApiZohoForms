@@ -47,7 +47,7 @@ app.post("/respuesta", (req, res) => {
     params: req.params,
     body: req.body,
   };
-  console.log(JSON.stringify(req.body, null, 2));
+  console.log(JSON.stringify(request, null, 2));
   res.json(request);
 });
 
