@@ -9,6 +9,10 @@ app.get("/hola", (req, res) => {
     Nombre: "Juan",
     Edad: 30,
     Ciudad: "Madrid",
+    Tipo: {
+      Tipo: "Negocio",
+    },
+    Ejemplo: "Negocio",
     telefonos: ["123-456-789", "987-654-321"],
     Hijos: [
       { Nombre: "Hijo1", Edad: 5 },
@@ -16,16 +20,31 @@ app.get("/hola", (req, res) => {
       { Nombre: "Hijo3", Edad: 10 },
     ],
     Hijas: [
-        { Nombre: "Hija1", Edad: 3 },
-        { Nombre: "Hija2", Edad: 8 },
-        { Nombre: "Hija3", Edad: 12 },
-        { Nombre: "Hija4", Edad: 15 },
-        { Nombre: "Hija5", Edad: 18 },
-        { Nombre: "Hija6", Edad: 20 }
+      { Nombre: "Hija1", Edad: 3 },
+      { Nombre: "Hija2", Edad: 8 },
+      { Nombre: "Hija3", Edad: 12 },
+      { Nombre: "Hija4", Edad: 15 },
+      { Nombre: "Hija5", Edad: 18 },
+      { Nombre: "Hija6", Edad: 20 },
     ],
     parametro1: params.param1,
     parametro2: params.param2,
   });
+});
+
+app.get("/respuesta", (req, res) => {
+  const params = req.query;
+  const body = req.body;
+  const headers = req.headers;
+  res.json({
+    headers,
+    params,
+    body,
+  });
+});
+
+app.use((req, res) => {
+  res.status(404).json({ error: "404 Not Found" });
 });
 
 const PORT = process.env.PORT || 3000;
