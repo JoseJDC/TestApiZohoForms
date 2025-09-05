@@ -36,13 +36,15 @@ app.get("/hola", (req, res) => {
 });
 
 app.post("/respuesta", (req, res) => {
-  const params = req.query;
-  const body = req.body;
-  const headers = req.headers;
   const request = {
-    headers,
-    params,
-    body,
+    req: req.url,
+    method: req.method,
+    host: req.hostname,
+    ip: req.ip,
+    headers: req.headers,
+    query: req.query,
+    params: req.params,
+    body: req.body,
   };
   console.log(request);
   res.json(request);
